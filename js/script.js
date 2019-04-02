@@ -6,13 +6,20 @@
       function successFunction(data){
         data = data.toUpperCase();
         data = data.replace(/['"]+/g, '');
-        console.log(data);
-        
-        
-        var allRows = data.split(/\r?\n|\r/);
-        console.log(allRows.length);
-        var table = '<table border=1px>';
+
+        var data2 = [];
+        var allRows = data.split(/\r?\n|\r/);// dividir las filas
         for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+          var a = []; //almacenar los datos de una fila
+          var rowCells = allRows[singleRow].split(','); //dividir las columnas
+          for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+            a.push(rowCells[rowCell])
+          }
+          data2.push(a);
+        }
+      
+        var table = '<table border=1px>';
+        for (var singleRow = 0; singleRow < data2.length; singleRow++) {
           if (singleRow === 0) {
             table += '<thead>';
             table += '<tr>';
@@ -20,17 +27,14 @@
             table += '<tr>';
           }
 
-          var rowCells = allRows[singleRow].split(',');
-          let sum = rowCells.reduce((previous, current) => current += previous);
-          let avg = sum / rowCells.length;
-          for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+          for (var rowCell = 0; rowCell < data2[singleRow].length; rowCell++) {
             if (singleRow === 0) {
               table += '<th>';
-              table += rowCells[rowCell];
+              table += data2[singleRow][rowCell];
               table += '</th>';
             } else {
               table += '<td>';
-              table += rowCells[rowCell];
+              table += data2[singleRow][rowCell];
               table += '</td>';
             }
           }
