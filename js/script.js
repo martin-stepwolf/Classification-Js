@@ -72,6 +72,13 @@
 
           data2[a][19] = data2[a][19].replace(/['V]+/g, '');
           data2[a][19] = data2[a][19].replace(/[' ]+/g, '');
+          
+          // Ver que espacios estan vacios
+          for (var b = 0; b < 20; b++) {
+            if(data2[a][b]==""){
+            console.log("x="+a+" y="+b);
+            }
+          }
         }
         
         var table = '<table border=1px>';
