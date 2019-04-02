@@ -18,25 +18,22 @@
           data2.push(a);
         }
 
-        //Limpiar Hz
         for (var a = 1; a < data2.length; a++) {
+          //Limpiar Hz
           data2[a][2] = data2[a][2].replace(/['HZ]+/g, '');
           data2[a][2] = data2[a][2].replace(/[' ]+/g, '');
-        }
-        //Limpiar PPI, DPI, PPP
-        for (var a = 1; a < data2.length; a++) {
+        
+          //Limpiar PPI, DPI, PPP
           data2[a][3] = data2[a][3].replace(/['DPI]+/g, '');
           data2[a][3] = data2[a][3].replace(/['PPI]+/g, '');
           data2[a][3] = data2[a][3].replace(/['PPP]+/g, '');
           data2[a][3] = data2[a][3].replace(/[' ]+/g, '');
-        }
-        //Limpiar Resolucion
-        for (var a = 1; a < data2.length; a++) {
+        
+          //Limpiar Resolucion
           data2[a][4] = data2[a][4].replace(/['X]+/g, '*');
           data2[a][4] = data2[a][4].replace(/[' ]+/g, '');
-        }
-        //Limpiar Internal storage
-        for (var a = 1; a < data2.length; a++) {
+        
+          //Limpiar Internal storage
           data2[a][6] = data2[a][6].replace(/[' ]+/g, '');
           if(data2[a][6].indexOf("MB")!=-1){
             data2[a][6] = data2[a][6].replace(/['MB]+/g, '');
@@ -45,9 +42,8 @@
           }
           else
           data2[a][6] = data2[a][6].replace(/['GB]+/g, '');
-        }
-        //Limpiar Ram memory
-        for (var a = 1; a < data2.length; a++) {
+        
+          //Limpiar Ram memory
           data2[a][7] = data2[a][7].replace(/[' ]+/g, '');
           if(data2[a][7].indexOf("MB")!=-1){
             data2[a][7] = data2[a][7].replace(/['MB]+/g, '');
@@ -56,14 +52,12 @@
           }
           else
           data2[a][7] = data2[a][7].replace(/['GB]+/g, '');
-        }      
-        //Limpiar CPU speed
-        for (var a = 1; a < data2.length; a++) {
+        
+          //Limpiar CPU speed
           data2[a][10] = data2[a][10].replace(/['MHZ]+/g, '');
           data2[a][10] = data2[a][10].replace(/[' ]+/g, '');
-        }
-        //Limpiar main camera y front camera
-        for (var a = 1; a < data2.length; a++) {
+        
+          //Limpiar main camera y front camera
           data2[a][11] = data2[a][11].replace(/['MP]+/g, '');
           data2[a][11] = data2[a][11].replace(/['MPX]+/g, '');
           data2[a][11] = data2[a][11].replace(/[' ]+/g, '');
@@ -71,9 +65,8 @@
           data2[a][13] = data2[a][13].replace(/['MP]+/g, '');
           data2[a][13] = data2[a][13].replace(/['MPX]+/g, '');
           data2[a][13] = data2[a][13].replace(/[' ]+/g, '');
-        }
-        //Limpiar Battery capacity y voltaje
-        for (var a = 1; a < data2.length; a++) {
+        
+          //Limpiar Battery capacity y voltaje
           data2[a][18] = data2[a][18].replace(/['MAH]+/g, '');
           data2[a][18] = data2[a][18].replace(/[' ]+/g, '');
 
