@@ -112,7 +112,7 @@
         } 
         table += '</tbody>';
         table += '</table>';
-        $('body').append(table);  
+        $('.row').html(table);  
     }
   }
   function Mean_Calculate(array){
