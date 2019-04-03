@@ -76,19 +76,11 @@
           // Ver que espacios estan vacios
           for (var b = 0; b < 20; b++) {
             if(data2[a][b]==""){
-            console.log("x="+a+" y="+b);
+              data2[a][b] = Mean_Main(b,data2);
+              console.log("x="+a+" y="+b+" remplazado por "+Mean_Main(b,data2));// impresion de los campos vacios y su remplazo
             }
           }
         }
-
-        for (var c = 1; c < data2[0].length; c++) {
-        var mean_value = [];
-        for (var d = 1; d < data2.length; d++) {
-        mean_value.push(data2[d][c]);
-        }
-        console.log(mean_value);
-        console.log(Mean(mean_value));
-      }
 
         var table = '<table border=1px>';
         for (var singleRow = 0; singleRow < data2.length; singleRow++) {
@@ -123,9 +115,16 @@
         $('body').append(table);  
     }
   }
-  function Mean(array){
+  function Mean_Calculate(array){
     var mean_posicion = Math.round(array.length/2);
     array.sort();
     var Mean = array[mean_posicion]; 
     return Mean;
   }
+  function Mean_Main(indice_y, data2){
+          var mean_value = [];
+          for (var d = 1; d < data2.length; d++) {
+          mean_value.push(data2[d][indice_y]);
+          }
+          return Mean_Calculate(mean_value);
+      }
