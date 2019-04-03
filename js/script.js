@@ -81,38 +81,8 @@
             }
           }
         }
-
-        var table = '<table border=1px>';
-        for (var singleRow = 0; singleRow < data2.length; singleRow++) {
-          if (singleRow === 0) {
-            table += '<thead>';
-            table += '<tr>';
-          } else {
-            table += '<tr>';
-          }
-
-          for (var rowCell = 0; rowCell < data2[singleRow].length; rowCell++) {
-            if (singleRow === 0) {
-              table += '<th>';
-              table += data2[singleRow][rowCell];
-              table += '</th>';
-            } else {
-              table += '<td>';
-              table += data2[singleRow][rowCell];
-              table += '</td>';
-            }
-          }
-          if (singleRow === 0) {
-            table += '</tr>';
-            table += '</thead>';
-            table += '<tbody>';
-          } else {
-            table += '</tr>';
-          }
-        } 
-        table += '</tbody>';
-        table += '</table>';
-        $('.row').html(table);  
+        Show_table(data2);
+      }
     }
   }
   function Mean_Calculate(array){
@@ -127,4 +97,36 @@
           mean_value.push(data2[d][indice_y]);
           }
           return Mean_Calculate(mean_value);
+      }  function Show_table(data2){
+    var table = '<table border=1px>';
+    for (var singleRow = 0; singleRow < data2.length; singleRow++) {
+      if (singleRow === 0) {
+        table += '<thead>';
+        table += '<tr>';
+      } else {
+        table += '<tr>';
       }
+  
+      for (var rowCell = 0; rowCell < data2[singleRow].length; rowCell++) {
+        if (singleRow === 0) {
+          table += '<th>';
+          table += data2[singleRow][rowCell];
+          table += '</th>';
+        } else {
+          table += '<td>';
+          table += data2[singleRow][rowCell];
+          table += '</td>';
+        }
+      }
+      if (singleRow === 0) {
+        table += '</tr>';
+        table += '</thead>';
+        table += '<tbody>';
+      } else {
+        table += '</tr>';
+      }
+    } 
+    table += '</tbody>';
+    table += '</table>';
+    $('.table').html(table);  
+  }
