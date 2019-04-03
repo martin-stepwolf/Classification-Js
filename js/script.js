@@ -80,7 +80,16 @@
             }
           }
         }
-        
+
+        for (var c = 1; c < data2[0].length; c++) {
+        var mean_value = [];
+        for (var d = 1; d < data2.length; d++) {
+        mean_value.push(data2[d][c]);
+        }
+        console.log(mean_value);
+        console.log(Mean(mean_value));
+      }
+
         var table = '<table border=1px>';
         for (var singleRow = 0; singleRow < data2.length; singleRow++) {
           if (singleRow === 0) {
@@ -113,4 +122,10 @@
         table += '</table>';
         $('body').append(table);  
     }
+  }
+  function Mean(array){
+    var mean_posicion = Math.round(array.length/2);
+    array.sort();
+    var Mean = array[mean_posicion]; 
+    return Mean;
   }
