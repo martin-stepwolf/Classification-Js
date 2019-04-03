@@ -84,7 +84,7 @@
         Show_table(data2);
       }
     }
-  }
+  
   function Mean_Calculate(array){
     var mean_posicion = Math.round(array.length/2);
     array.sort();
