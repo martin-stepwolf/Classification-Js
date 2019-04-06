@@ -135,13 +135,16 @@ function Game_start(){
   }
 
   function Game(q){// variable q es la pregunta a realizar
-    if(data2.length >=2){
+    if(data2.length >=3 && pregunta_responder <18){
       $('#pregunta').text(Array_compose(preguntas_orden[q])[0]);
       $('#medida').text(Calculo_medida(preguntas_orden[q]));    
       Show_table(); // Actualiza la tabla
   }
   else
-  console.log("El juego a terminado");
+  if(data2.length ==1)
+  $('.main').html("<center><h3>Ningun dispositivo encontrado</h3><p>Lo siento, no existe tu dispositivo asi en la base de datos.</p></center><hr>"); 
+  else
+  $('.main').html("<center><h3>Dispositivo encontrado</h3><b id='pregunta'><p>Tu dispositivo es un "+data2[1][0]+".</p></center><hr>"); 
   }
 
   var preguntas_orden = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
