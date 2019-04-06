@@ -132,3 +132,7 @@ function Game_start(){
     table += '</table>';
     $('.table').html(table);  
   }
+  function Eliminacion_dato(x){// x es el indice a eliminar
+    data2.splice(x, 1);
+    //  console.log((x++)+" eliminado"); 
+  }
