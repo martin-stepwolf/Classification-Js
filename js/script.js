@@ -93,11 +93,11 @@ function Game_start(){
     return Mean;
   }
   function Array_compose(indice_y, data2){
-          var mean_value = [];
-          for (var d = 1; d < data2.length; d++) {
-          mean_value.push(data2[d][indice_y]);
+          var array_y = [];
+          for (var d = 0; d < data2.length; d++) {
+          array_y.push(data2[d][indice_y]);
           }
-          return mean_value;
+          return array_y;
       } 
   function Show_table(data2){
     var table = '<table border=1px>';
