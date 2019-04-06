@@ -132,6 +132,13 @@ function Game_start(){
     table += '</table>';
     $('.table').html(table);  
   }
+  var preguntas_orden = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+  preguntas_orden = preguntas_orden.sort(function() {return Math.random() - 0.5});  
+  var pregunta_responder = 0;
+  function Calculo_medida(x){
+    var medidas = ['','Pulgadas','Hz','PPI','','','GB','GB','','','MHz','Mp','','Mp','','','','','mAh','V' ]
+    return medidas[x];
+  }
   function Eliminacion_dato(x){// x es el indice a eliminar
     data2.splice(x, 1);
     //  console.log((x++)+" eliminado"); 
