@@ -132,6 +132,17 @@ function Game_start(){
     table += '</table>';
     $('.table').html(table);  
   }
+
+  function Game(q){// variable q es la pregunta a realizar
+    if(data2.length >=2){
+      $('#pregunta').text(Array_compose(preguntas_orden[q])[0]);
+      $('#medida').text(Calculo_medida(preguntas_orden[q]));    
+      Show_table(); // Actualiza la tabla
+  }
+  else
+  console.log("El juego a terminado");
+  }
+
   var preguntas_orden = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
   preguntas_orden = preguntas_orden.sort(function() {return Math.random() - 0.5});  
   var pregunta_responder = 0;
