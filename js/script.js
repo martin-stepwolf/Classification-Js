@@ -155,3 +155,16 @@ function Game_start(){
     data2.splice(x, 1);
     //  console.log((x++)+" eliminado"); 
   }
+function Responder(){
+    var res= $('#respuesta').val();
+    var v = preguntas_orden[pregunta_responder];
+    for(var data=(data2.length-1); data>= 1; data--){
+    if(data2[data][v] != res){
+      Eliminacion_dato(data);
+    }
+    }
+    $('#respuesta').val('');
+     pregunta_responder++; //cambio a la siguiente pregunta
+     Show_table();// actualizacion de tabla
+     Game(pregunta_responder);// actualizacion panel preguntas
+   }
