@@ -81,7 +81,7 @@ function Game_start(){
             }
           }
         }
-        $('.main').html("<center><h3>Calculo de tu celular</h3></center><b id='pregunta'>Caracteristica</b><input type='text' id='respuesta'> <label id='medida'>GB</label> <button onclick='Responder();'>Responder</button><hr>"); 
+        $('.main').html("<center><h3>Calculo de tu celular</h3></center><b id='pregunta'>Caracteristica</b><input class='form-control' type='text' id='respuesta'> <label id='medida'>GB</label> <button class='btn btn-success' onclick='Responder();'>Responder</button><hr>"); 
         Show_table();
         Game(pregunta_responder);
       }
