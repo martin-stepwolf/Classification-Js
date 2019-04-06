@@ -1,7 +1,7 @@
 ﻿var data2 = [];
 function Game_start(){
   $.ajax({
-        url: 'Datos recabados - Hoja 1.csv',
+        url: 'datos/Datos recabados - Hoja 1.csv',
         dataType: 'text',
       }).done(successFunction);
       function successFunction(data){
