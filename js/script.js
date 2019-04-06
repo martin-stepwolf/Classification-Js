@@ -76,13 +76,14 @@ function Game_start(){
           // Ver que espacios estan vacios
           for (var b = 0; b < 20; b++) {
             if(data2[a][b]==""){
-              data2[a][b] = Mean_Calculate(Array_compose(b,data2));
-             // console.log("x="+a+" y="+b+" remplazado por "+Mean_Calculate(Array_compose(b,data2)));// impresion de los campos vacios y su remplazo
+              data2[a][b] = Mean_Calculate(Array_compose(b));
+             // console.log("x="+a+" y="+b+" remplazado por "+Mean_Calculate(Array_compose(b)));// impresion de los campos vacios y su remplazo
             }
           }
         }
         $('.main').html("<center><h3>Calculo de tu celular</h3></center><b id='pregunta'>Caracteristica</b><input type='text' id='respuesta'> <label id='medida'>GB</label> <button onclick='Responder();'>Responder</button><hr>"); 
-        Show_table(data2);
+        Show_table();
+        Game(pregunta_responder);
       }
     }
   
@@ -92,14 +93,14 @@ function Game_start(){
     var Mean = array[mean_posicion]; 
     return Mean;
   }
-  function Array_compose(indice_y, data2){
+  function Array_compose(indice_y){
           var array_y = [];
           for (var d = 0; d < data2.length; d++) {
           array_y.push(data2[d][indice_y]);
           }
           return array_y;
       } 
-  function Show_table(data2){
+  function Show_table(){
     var table = '<table border=1px>';
     for (var singleRow = 0; singleRow < data2.length; singleRow++) {
       if (singleRow === 0) {
