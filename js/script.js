@@ -151,24 +151,6 @@ function Game_start(){
     var medidas = ['','Pulgadas','Hz','PPI','','','GB','GB','','','MHz','Mp','','Mp','','','','','mAh','V' ]
     return medidas[x];
   }
-  
-  function Responder(){
-   var res= $('#respuesta').val();
-for(var data=data2.length; data>= 1; data--){
-  var x = preguntas_orden[pregunta_responder];
-  for(z in data2[1]){
-  var y=Array_compose(z);
-  if(y != res){
-    console.log(y);
-    Eliminacion_dato(data);
-  }
-}
-}
-    pregunta_responder++; //cambio a la siguiente pregunta
-    Show_table();// actualizacion de tabla
-    Game(pregunta_responder);// actualizacion panel preguntas
-  }
-
   function Eliminacion_dato(x){// x es el indice a eliminar
     data2.splice(x, 1);
     //  console.log((x++)+" eliminado"); 
