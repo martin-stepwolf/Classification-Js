@@ -1,3 +1,4 @@
+﻿var data2 = [];
 function Game_start(){
   $.ajax({
         url: 'Datos recabados - Hoja 1.csv',
@@ -7,7 +8,6 @@ function Game_start(){
         data = data.toUpperCase();
         data = data.replace(/['"]+/g, '');
 
-        var data2 = [];
         var allRows = data.split(/\r?\n|\r/);// dividir las filas
         for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
           var a = []; //almacenar los datos de una fila
