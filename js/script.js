@@ -93,6 +93,7 @@ function Game_start(){
     var Mean = array[mean_posicion]; 
     return Mean;
   }
+  
   function Array_compose(indice_y){
           var array_y = [];
           for (var d = 0; d < data2.length; d++) {
@@ -135,7 +136,7 @@ function Game_start(){
   }
 
   function Game(q){// variable q es la pregunta a realizar
-    if(data2.length >=3 && pregunta_responder <18){
+    if(data2.length >=3 && pregunta_responder <19){
       $('#pregunta').text(Array_compose(preguntas_orden[q])[0]);
       $('#medida').text(Calculo_medida(preguntas_orden[q]));    
       Show_table(); // Actualiza la tabla
@@ -154,19 +155,20 @@ function Game_start(){
     var medidas = ['','Pulgadas','Hz','PPI','','','GB','GB','','','MHz','Mp','','Mp','','','','','mAh','V' ]
     return medidas[x];
   }
+
   function Eliminacion_dato(x){// x es el indice a eliminar
     data2.splice(x, 1);
-    //  console.log((x++)+" eliminado"); 
   }
+
 function Responder(){
     var res= $('#respuesta').val();
-    var v = preguntas_orden[pregunta_responder];
+    var v = preguntas_orden[pregunta_responder];// pregunta a responder
     for(var data=(data2.length-1); data>= 1; data--){
-    if(data2[data][v] != res){
-      Eliminacion_dato(data);
+      if(data2[data][v] != res){
+        Eliminacion_dato(data);
+      }
     }
-    }
-    $('#respuesta').val('');
+    $('#respuesta').val('');// reinicio de valores
      pregunta_responder++; //cambio a la siguiente pregunta
      Show_table();// actualizacion de tabla
      Game(pregunta_responder);// actualizacion panel preguntas
