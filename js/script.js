@@ -1,4 +1,4 @@
-﻿function Lectura(){
+function Game_start(){
   $.ajax({
         url: 'Datos recabados - Hoja 1.csv',
         dataType: 'text',
