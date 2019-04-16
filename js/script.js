@@ -19,6 +19,10 @@ function Game_start(){
         }
 
         for (var a = 1; a < data2.length; a++) {
+          //Limpiar todos los espacios vacios al inicio y al final
+          for(var e=0;e>20;e++)
+          data2[a][e] = data2[a][e].replace(/^\s*|\s*$/g,"");
+
           //Limpiar Hz
           data2[a][2] = data2[a][2].replace(/['HZ]+/g, '');
           data2[a][2] = data2[a][2].replace(/[' ]+/g, '');
